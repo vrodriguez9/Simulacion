@@ -11,8 +11,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Simulacion {
 
     public static void main(String[] args) {
-        casoderoger();
+        //casoderoger();
         //casoDeValeria();
+        casoDeBrettsy();
     }
 
     static void casoderoger() {
@@ -43,6 +44,23 @@ public class Simulacion {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.findElement(By.id("CantonCombo")).click();
         driver.findElement(By.cssSelector("#\\34 7")).click();
+    }
+    
+    static void casoDeBrettsy() {
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.fischelenlinea.com/index");
+        driver.manage().window().maximize();
+
+        WebElement farmacias = driver.findElement(By.cssSelector("a.nav-link.active"));
+        farmacias.click();
+        
+        driver.findElement(By.id("fullname")).sendKeys("Ana Madrigal Jimenez");
+        
+        
+        
+
+        
     }
 
 }
