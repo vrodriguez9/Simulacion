@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class Simulacion {
 
@@ -15,7 +16,7 @@ public class Simulacion {
         //casoDeValeria();
         casoDeBrettsy();
     }
-
+    
     static void casoderoger() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -50,16 +51,23 @@ public class Simulacion {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.fischelenlinea.com/index");
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 
         WebElement farmacias = driver.findElement(By.cssSelector("a.nav-link.active"));
         farmacias.click();
         
         driver.findElement(By.id("fullname")).sendKeys("Ana Madrigal Jimenez");
+        driver.findElement(By.id("email")).sendKeys("anamadrigal@gmail.com");
+        driver.findElement(By.id("phone")).sendKeys("88887777");
+        driver.findElement(By.id("message")).sendKeys("Consulta de planes");
+       Select se = new Select(driver.findElement(By.id("subject")));
+        se.selectByValue("7");
+        driver.findElement(By.cssSelector("#fromcontactus > button")).click();
         
         
         
-
+        
+       
         
     }
 
