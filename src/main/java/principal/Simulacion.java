@@ -70,5 +70,20 @@ public class Simulacion {
        
         
     }
+    
+    
+    static  void casoDeGregory() {
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.fischelenlinea.com/index");
+        driver.manage().window().maximize();
+
+        driver.findElement(By.className(className:"btn account" )).click();
+        driver.findElement(By.id("email")).sendKeys(keyToSend:"g.gren54@gmail.com");
+        driver.findElement(By.id("password")).sendKeys(keyToSend:"SQH#yC3Q");
+        driver.findElement(By.id("btnsigin")).click();
+
+
+    }
 
 }
