@@ -1,6 +1,4 @@
-# Simulación
-
-Simulación del Grupo 4:
+# Simulación Grupo 4
 
 Para la ejecuión de pruebas se utilizó Selenium web driver.
 
