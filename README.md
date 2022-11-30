@@ -1,4 +1,4 @@
-# Simulacion
+# Simulación
 
 Simulación del Grupo 4:
 
